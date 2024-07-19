@@ -1,0 +1,61 @@
+package com.tka.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.tka.Service.PlayerService;
+import com.tka.entity.Player;
+
+@RestController
+public class PlayerController {
+	@Autowired
+	PlayerService s;
+
+//	@GetMapping("/Insert")
+////	public String insertData() {
+////		s.insertData();
+////		return "Data Inserted Successfully";
+////	}
+	@GetMapping("/getData")
+	public List<Player> getData() {
+		s.getData();
+		return s.getData();
+	}
+
+	@GetMapping("/fetchSinglePlayer")
+	public Player fetchSinglePlayer() {
+		return s.fetchSinglePlayer();
+	}
+
+	@PostMapping("/addSinglePlayer")
+	public void addSinglePlayer(@RequestBody Player p) {
+		s.addSinglePlayer(p);
+	}
+
+	@PostMapping("/addMultiplePlayer")
+	public void addMultipleData(@RequestBody List<Player> p) {
+
+		s.addMultipleData(p);
+	}
+
+	@PostMapping("/updateSinglePlayer")
+	public void updateSinglePlayer(@RequestBody Player p) {
+		s.updateSinglePlayer(p);
+	}
+
+	@PutMapping("/updateMultiplePlayer")
+	public void updateMultiplePlayer(List<Player> p) {
+		s.updateMultiplePlayer(p);
+	}
+	@PostMapping("/delete")
+	public void delete(Player p) {
+
+		s.delete(p);
+	}
+}

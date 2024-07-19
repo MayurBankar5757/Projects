@@ -1,0 +1,19 @@
+package com.practical;
+
+public class Swap {
+	int a = 20;
+	int b = 10;
+	
+	void swap() {
+		a = a+b;
+		b= a-b;
+		a =a-b;
+		System.out.println(a+ " "+ b);
+		
+	}
+	public static void main(String [] args) {
+		Swap a = new Swap();
+		a.swap();
+	}
+	
+}

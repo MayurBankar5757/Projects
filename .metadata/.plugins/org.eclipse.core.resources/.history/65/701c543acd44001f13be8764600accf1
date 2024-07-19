@@ -1,0 +1,44 @@
+package Interview;
+
+public class Tcs_Sol2 {
+	// Java implementation of the above approach 
+	
+
+		static void maxLitres(int budget, int plastic, 
+								int glass, int refund)
+		{
+
+			// if buying glass bottles is profitable 
+			if (glass - refund < plastic)
+			{
+				
+				// Glass bottles that can be bought 
+				int ans = Math.max((budget - refund) / (glass - refund), 0);
+
+				// Change budget according the bought bottles 
+				budget -= ans * (glass - refund);
+
+				// Plastic bottles that can be bought 
+				ans += budget / plastic;
+				System.out.println(ans);
+			} 
+			
+			// if only plastic bottles need to be bought 
+			else
+			{
+				System.out.println((budget / plastic));
+			}
+
+		}
+
+		// Driver Code 
+		public static void main(String[] args) 
+		{
+			int budget = 10, plastic = 11, glass = 9, refund = 8;
+			maxLitres(budget, plastic, glass, refund);
+		}
+	}
+
+	/* This code contributed by PrinciRaj1992 */
+
+

@@ -1,0 +1,63 @@
+package com.tka.Service;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.tka.Dao.PlayerDao;
+import com.tka.entity.Player;
+
+@Service
+public class PlayerService {
+	@Autowired
+	PlayerDao d;
+	
+//	public String insertData() {
+//		d.inserData();
+//		return "Data Inserted";
+//	}
+
+	public List<Player> getData() {
+		// TODO Auto-generated method stub
+		return d.getData();
+	}
+
+	public void addSinglePlayer(Player p) {
+		// TODO Auto-generated method stub
+		d.addSinglePlayer(p);
+		
+	}
+
+	public Player fetchSinglePlayer() {
+		// TODO Auto-generated method stub
+		return d.fetchSinglePlayer();
+	}
+
+	public void addMultipleData(List<Player> p) {
+		// TODO Auto-generated method stub
+		d.addMultipleData(p);
+		
+	}
+
+	public void updateSinglePlayer(Player p) {
+		// TODO Auto-generated method stub
+
+		d.updateSinglePlayer(p);
+	}
+
+	public void updateMultiplePlayer(List<Player> p) {
+		// TODO Auto-generated method stub
+		d.updateMultiplePlayer(p);
+	}
+	public void delete(Player p) {
+		
+		d.delete(p);
+	}
+	 public void deleteMultiplePlayers(List<Player> players) {
+	        d.deleteMultiplePlayers(players);
+	    }
+
+}

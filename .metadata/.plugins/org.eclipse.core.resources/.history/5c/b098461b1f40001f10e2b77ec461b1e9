@@ -1,0 +1,50 @@
+package com.tka.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import com.tka.Service.PlayerService;
+import com.tka.entity.Player;
+
+@RestController
+public class PlayerController {
+    @Autowired
+    private PlayerService playerService;
+
+    @GetMapping("/getData")
+    public List<Player> getData() {
+        return playerService.getData();
+    }
+
+    @GetMapping("/fetchSinglePlayer")
+    public Player fetchSinglePlayer() {
+        return playerService.fetchSinglePlayer();
+    }
+
+    @PostMapping("/addSinglePlayer")
+    public void addSinglePlayer(@RequestBody Player player) {
+        playerService.addSinglePlayer(player);
+    }
+
+    @PostMapping("/addMultiplePlayer")
+    public void addMultipleData(@RequestBody List<Player> players) {
+        playerService.addMultipleData(players);
+    }
+
+    @PostMapping("/updateSinglePlayer")
+    public void updateSinglePlayer(@RequestBody Player player) {
+        playerService.updateSinglePlayer(player);
+    }
+
+    @PutMapping("/updateMultiplePlayer")
+    public void updateMultiplePlayer(@RequestBody List<Player> players) {
+        playerService.updateMultiplePlayer(players);
+    }
+
+    @DeleteMapping("/delete")
+    public void delete(@RequestBody Player player) {
+        playerService.delete(player);
+    }
+}

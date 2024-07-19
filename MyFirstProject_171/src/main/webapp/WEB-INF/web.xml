@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>MyFirstProject_171</display-name>
+ <context-param>
+ <param-name>Driver</param-name>
+ <param-value>com.jdbc.mysql.Driver</param-value>
+ 
+ </context-param>
+  <servlet>
+    <description></description>
+    <display-name>Cservlet1</display-name>
+    <servlet-name>Cservlet1</servlet-name>
+    <servlet-class>com.config.Cservlet1</servlet-class>
+    <init-param>
+      <param-name>name</param-name>
+      <param-value>TheKiranAcademy</param-value>
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cservlet1</servlet-name>
+    <url-pattern>/Cservlet1</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Cservlet2</display-name>
+    <servlet-name>Cservlet2</servlet-name>
+    <servlet-class>com.config.Cservlet2</servlet-class>
+    <init-param>
+    <param-name>Kiran sir</param-name>
+    <param-value>Welcome to kiran academy</param-value>
+    
+    </init-param>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Cservlet2</servlet-name>
+    <url-pattern>/Cservlet2</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SaveServlet</display-name>
+    <servlet-name>SaveServlet</servlet-name>
+    <servlet-class>com.database.SaveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SaveServlet</servlet-name>
+    <url-pattern>/SaveServlet</url-pattern>
+    
+  </servlet-mapping>
+</web-app>

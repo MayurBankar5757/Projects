@@ -1,0 +1,65 @@
+package com.tka.entity;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Player {
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	int pid;
+	String pName;
+	int age;
+	int noofyrs;
+	
+	
+	public Player(List<Player>al) {
+		super();
+		for(Player p : al) {
+			this.pid=p.getPid();
+			this.pName = p.getpName();
+			this.age=p.getAge();
+			this.noofyrs=p.getNoofyrs();
+			
+		}
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Player(String pName, int age, int noofyrs) {
+		super();
+		this.pName = pName;
+		this.age = age;
+		this.noofyrs = noofyrs;
+	}
+	public int getPid() {
+		return pid;
+	}
+	public void setPid(int pid) {
+		this.pid = pid;
+	}
+	public String getpName() {
+		return pName;
+	}
+	public void setpName(String pName) {
+		this.pName = pName;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public int getNoofyrs() {
+		return noofyrs;
+	}
+	public void setNoofyrs(int noofyrs) {
+		this.noofyrs = noofyrs;
+	}
+	
+	
+}
